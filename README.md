@@ -21,3 +21,50 @@ Regular Expressions (re)
 JSON
 Streamlit
 Visual Studio Code
+
+**Installation**
+1️⃣ Clone the repository
+git clone https://github.com/your-username/resume-parser.git
+cd resume-parser
+2️⃣ Install dependencies
+pip install pdfplumber python-docx streamlit
+▶️ How to Run
+🔹 Run Parser (Terminal)
+python parser.py
+🔹 Run Web App
+streamlit run app.py
+
+OR
+
+py -m streamlit run app.py
+
+📸 **Usage**
+Open the web app
+Upload a resume (PDF/DOCX)
+View extracted:
+Skills
+Education
+Experience
+Download results as JSON
+
+📌 **Example Output**
+{
+    "Skills": ["Python", "SQL"],
+    "Education": ["Bachelor"],
+    "Experience": ["Intern", "Project"]
+}
+
+🎯 **Future Enhancements**
+🤖 Advanced NLP-based skill detection
+📊 Resume scoring system
+💼 Job matching feature
+🎨 Improved UI design
+🌐 Deployment on cloud
+
+👩‍💻 Author
+
+Kavisri Vijayakumar
+
+📄 **License**
+
+This project is for educational purposes.
