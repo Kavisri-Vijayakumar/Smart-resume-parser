@@ -1,0 +1,14 @@
+Name: Kavisri Vijayakumar
+
+Email: kavisri@email.com
+Phone: 9876543210
+
+Education:
+Bachelor of Computer Science
+
+Skills:
+Python, Java, SQL, Machine Learning
+
+Experience:
+Intern at ABC Company
+Worked on web development project
