@@ -3,10 +3,15 @@ import pdfplumber
 import docx
 import re
 import json
+<<<<<<< HEAD
 import tempfile
 
 
 # ===== Extract Text =====
+=======
+
+
+>>>>>>> 647fb528e9c4a3e8ebab0d8c18c3e684bb45c6ec
 def extract_text(file):
     text = ""
 
@@ -25,14 +30,20 @@ def extract_text(file):
     return text
 
 
+<<<<<<< HEAD
 # ===== Clean Text =====
+=======
+>>>>>>> 647fb528e9c4a3e8ebab0d8c18c3e684bb45c6ec
 def clean_text(text):
     text = re.sub(r'\n+', '\n', text)
     text = re.sub(r'\s+', ' ', text)
     return text.strip()
 
 
+<<<<<<< HEAD
 # ===== Extract Skills =====
+=======
+>>>>>>> 647fb528e9c4a3e8ebab0d8c18c3e684bb45c6ec
 def extract_skills(text):
     skills_list = [
         "Python", "Java", "C++", "SQL",
@@ -40,6 +51,7 @@ def extract_skills(text):
         "JavaScript", "Data Science"
     ]
 
+<<<<<<< HEAD
     found_skills = []
 
     for skill in skills_list:
@@ -90,13 +102,49 @@ if uploaded_file is not None:
         "Skills": skills,
         "Education": education,
         "Experience": experience
+=======
+    return [skill for skill in skills_list if skill.lower() in text.lower()]
+
+
+def extract_education(text):
+    keywords = ["Bachelor", "B.Tech", "BSc", "BCA", "Master", "MBA"]
+
+    return list(set([k for k in keywords if k.lower() in text.lower()]))
+
+
+def extract_experience(text):
+    keywords = ["Intern", "Experience", "Project", "Worked"]
+
+    return list(set([k for k in keywords if k.lower() in text.lower()]))
+
+
+st.title("📄 Smart Resume Parser")
+
+uploaded_file = st.file_uploader("Upload Resume", type=["pdf", "docx"])
+
+if uploaded_file:
+    text = extract_text(uploaded_file)
+    cleaned = clean_text(text)
+
+    result = {
+        "Skills": extract_skills(cleaned),
+        "Education": extract_education(cleaned),
+        "Experience": extract_experience(cleaned)
+>>>>>>> 647fb528e9c4a3e8ebab0d8c18c3e684bb45c6ec
     }
 
     st.subheader("📌 Extracted Information")
     st.json(result)
 
     st.download_button(
+<<<<<<< HEAD
         "Download Result",
         json.dumps(result, indent=4),
         file_name="result.json"
     )
+=======
+        "Download JSON",
+        json.dumps(result, indent=4),
+        file_name="result.json"
+    )
+>>>>>>> 647fb528e9c4a3e8ebab0d8c18c3e684bb45c6ec
